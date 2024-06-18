@@ -29,7 +29,7 @@ void Mega::FromFile(const string &FileName)
 	vector<string> flds;
 	GetNextFields(flds, 3);
 	asserta(flds[0] == "mega");
-	uint m_FeatureCount = StrToUint(flds[1]);
+	m_FeatureCount = StrToUint(flds[1]);
 	uint ProfileCount = StrToUint(flds[2]);
 	m_LogProbsVec.resize(m_FeatureCount);
 	m_LogProbMxVec.resize(m_FeatureCount);
