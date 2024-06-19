@@ -2,7 +2,7 @@
 #include "mega.h"
 #include "alpha.h"
 
-const string &Mega::GetNextLine()
+const string& Mega::GetNextLine()
 	{
 	asserta(m_NextLineNr < SIZE(m_Lines));
 	return m_Lines[m_NextLineNr++];

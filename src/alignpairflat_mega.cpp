@@ -10,13 +10,18 @@
 #include "muscle.h"
 #include "mega.h"
 
-float AlignPairFlat_Mega_SparsePost(const Mega * M,
+float AlignPairFlat_mega_SparsePost(const Mega * M,
 string &Path, MySparseMx *SparsePost, uint index_X, uint index_Y )
     {
     InitProbcons();
 
-    uint L1 = (uint)M->m_Seqs[index_X].size();
-    uint L2 = (uint)M->m_Seqs[index_Y].size();
+    
+    asserta(SIZE(M->m_Seqs) > index_X);
+    asserta(SIZE(M->m_Seqs) > index_Y);
+    
+uint L1 = SIZE(M->m_Seqs[index_X]);
+    uint L2 = SIZE(M->m_Seqs[index_Y]);
+
 //    uint L1 = Seq1->GetLength();
 //    uint L2 = Seq2->GetLength();
     asserta(L1 > 0);
@@ -29,13 +34,13 @@ string &Path, MySparseMx *SparsePost, uint index_X, uint index_Y )
     float *Bwd = AllocFB(L1, L2);
     float *Post = AllocPost(L1, L2);
 
-//    void CalcFwdFlat_Mega(const Mega &M, uint ProfileIdxX, uint ProfileIdxY, float *Flat)
-    CalcFwdFlat_Mega(*M, index_X, index_Y, Fwd);
+//    void CalcFwdFlat_mega(const Mega &M, uint ProfileIdxX, uint ProfileIdxY, float *Flat)
+    CalcFwdFlat_mega(*M, index_X, index_Y, Fwd);
 
 //  CalcFwdFlat(ByteSeq1, L1, ByteSeq2, L2, Fwd);
     
-//    void CalcBwdFlat_Mega(const Mega &M,uint ProfileIdxX, uint ProfileIdxY, float *Flat)
-    CalcBwdFlat_Mega(*M, index_X, index_Y, Bwd);
+//    void CalcBwdFlat_mega(const Mega &M,uint ProfileIdxX, uint ProfileIdxY, float *Flat)
+    CalcBwdFlat_mega(*M, index_X, index_Y, Bwd);
  
 //    CalcBwdFlat(ByteSeq1, L1, ByteSeq2, L2, Bwd);
     CalcPostFlat(Fwd, Bwd, L1, L2, Post);
@@ -56,8 +61,8 @@ string &Path, MySparseMx *SparsePost, uint index_X, uint index_Y )
     return EA;
     }
 
-float AlignPairFlat_Mega(const Mega * M, string &Path, uint index_X,uint index_Y)
+float AlignPairFlat_mega(const Mega * M, string &Path, uint index_X,uint index_Y)
     {
-    float EA = AlignPairFlat_Mega_SparsePost(M, Path, 0, index_X, index_Y);
+    float EA = AlignPairFlat_mega_SparsePost(M, Path, 0, index_X, index_Y);
     return EA;
     }

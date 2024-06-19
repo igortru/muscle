@@ -80,7 +80,7 @@ public:
 
 	void SetGSI(uint GSI)
 		{
-		asserta(m_GSI == UINT_MAX);
+		assert(m_GSI == UINT_MAX);
 		m_GSI = GSI;
 		}
 

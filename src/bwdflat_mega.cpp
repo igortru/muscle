@@ -11,7 +11,7 @@ Bwd[s][i][j] =
 	last (LY-j) letters of Y.
 ***/
 
-void CalcBwdFlat_Mega(const Mega &M,
+void CalcBwdFlat_mega(const Mega &M,
   uint ProfileIdxX, uint ProfileIdxY, float *Flat)
 	{
 	asserta(ProfileIdxX < SIZE(M.m_Profiles));

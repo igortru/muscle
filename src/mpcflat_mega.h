@@ -13,5 +13,3 @@ class MPCFlat_mega : public MPCFlat
         MPCFlat_mega(Mega & MM) : m_MM(MM) {}
     };
 
-void CalcFwdFlat_mega(const Mega &M, uint ProfileIdxX, uint ProfileIdxY, float *Flat);
-void CalcBwdFlat_mega(const Mega &M,uint ProfileIdxX, uint ProfileIdxY, float *Flat);

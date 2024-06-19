@@ -12,7 +12,7 @@ Fwd[s][i][j] =
 	ending in state s.
 ***/
 
-void CalcFwdFlat_Mega(const Mega &M,
+void CalcFwdFlat_mega(const Mega &M,
   uint ProfileIdxX, uint ProfileIdxY, float *Flat)
 	{
 	asserta(ProfileIdxX < SIZE(M.m_Profiles));

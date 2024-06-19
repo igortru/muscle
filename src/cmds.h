@@ -3,6 +3,8 @@
 #endif
 
 C(align)
+C(align_mega)
+C(test_mega)
 C(upgma5)
 C(msastats)
 C(pprog)
@@ -65,7 +67,6 @@ C(test_malloc)
 C(upgma5_msa)
 C(pprog_tree)
 C(test)
-C(test_mega)
 C(build_prof3)
 C(profprof3)
 C(muscle3)
