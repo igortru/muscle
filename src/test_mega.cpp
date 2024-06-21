@@ -13,7 +13,7 @@ void cmd_test_mega()
     {
        if (M.m_Labels[i] == "1hhs_A")
            index_X = i;
-       if (M.m_Labels[i] == "1hhs_A")
+       if (M.m_Labels[i] == "1ra6_A")
            index_Y = i;
         cout << M.m_Labels[i] << "\t" << M.m_Seqs[i].size() << endl;
     }

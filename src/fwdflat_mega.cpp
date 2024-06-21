@@ -122,6 +122,7 @@ void CalcFwdFlat_mega(const Mega &M,
 			//float Emit_Pair = MatchScore[x][y];
 			float Emit_y = M.GetInsScore(ProfileY, j-1);
 			float Emit_Pair = M.GetMatchScore(ProfileX, i-1, ProfileY, j-1);
+                cout << Emit_y << "\t" << Emit_Pair << endl;
 			if (i == 1 && j == 1)
 				Flat[Base_1_1 + HMMSTATE_M] = tSM + Emit_x0_y0;
 			else

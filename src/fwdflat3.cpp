@@ -104,6 +104,7 @@ void CalcFwdFlat(const byte *X, uint LX, const byte *Y, uint LY, float *Flat)
 			char y = Y[j-1];
 			float Emit_y = InsScore[y];
 			float Emit_Pair = MatchScore[x][y];
+                cout << Emit_y << "\t" << Emit_Pair << endl;
 			if (i == 1 && j == 1)
 				Flat[Base_1_1 + HMMSTATE_M] = tSM + Emit_x0_y0;
 			else
