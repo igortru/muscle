@@ -100,7 +100,7 @@ void MPCFlat::BuildPost(const MultiSequence &MSA1, const MultiSequence &MSA2,
 				}
 			}
 		}
-#if 0//TRACE
+#if 1//TRACE
 	LogFlatMx("MSAPost", Post, ColCount1, ColCount2);
 #endif
 	}

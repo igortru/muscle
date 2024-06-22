@@ -9,7 +9,7 @@ static void Align(MPCFlat_mega &M, MultiSequence &InputSeqs,
     if (fOut == 0)
         return;
 
-    bool Nucleo = (g_Alpha == ALPHA_Nucleo);
+   bool Nucleo = (g_Alpha == ALPHA_Nucleo);
     HMMParams HP;
     if (optset_hmmin)
         HP.FromFile(opt(hmmin));

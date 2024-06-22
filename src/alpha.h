@@ -50,5 +50,6 @@ static inline bool isgap(char c)
 
 extern byte g_CharToLetterNucleo[256];
 extern byte g_CharToLetterAmino[256];
+extern byte g_LetterToCharAmino[256];
 
 #endif	// alpha_h

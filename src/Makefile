@@ -4,8 +4,8 @@ BINPATH := $(BINDIR)/muscle
 
 CPPFLAGS := $(CPPFLAGS) -DNDEBUG -pthread
 
-CXX = ccache g++
-CXXFLAGS := $(CXXFLAGS) -O3 -fopenmp -ffast-math -msse -mfpmath=sse
+CXX = ccache g++-14
+CXXFLAGS := $(CXXFLAGS) -g -fopenmp -ffast-math -msse -mfpmath=sse
 
 UNAME_S := $(shell uname -s)
 LDFLAGS := $(LDFLAGS) -O3 -fopenmp -pthread -lpthread
@@ -113,6 +113,7 @@ OBJS = \
   $(OBJDIR)/hscore.o \
   $(OBJDIR)/m3alnparams.o \
   $(OBJDIR)/alignpairflat.o \
+  $(OBJDIR)/alignpairflat_mega.o \
   $(OBJDIR)/allocflat.o \
   $(OBJDIR)/alnalnsflat.o \
   $(OBJDIR)/alnmsasbypath.o \
@@ -175,6 +176,7 @@ OBJS = \
   $(OBJDIR)/make_substmx.o \
   $(OBJDIR)/maxcc.o \
   $(OBJDIR)/mpcflat.o \
+  $(OBJDIR)/mpcflat_mega.o \
   $(OBJDIR)/eadistmx.o \
   $(OBJDIR)/eadistmxmsas.o \
   $(OBJDIR)/fasta.o \
@@ -239,6 +241,8 @@ OBJS = \
   $(OBJDIR)/sweep.o \
   $(OBJDIR)/sweeper.o \
   $(OBJDIR)/test.o \
+  $(OBJDIR)/test_mega.o \
+  $(OBJDIR)/align_mega.o \
   $(OBJDIR)/test_malloc.o \
   $(OBJDIR)/tracebackbitmem.o \
   $(OBJDIR)/tree.o \
@@ -289,7 +293,7 @@ OBJS = \
 
 $(BINPATH) : $(BINDIR)/ $(OBJDIR)/ $(OBJS)
 	$(CXX) $(LDFLAGS) $(OBJS) -o $(BINPATH)
-	strip -d $(BINPATH)
+#	strip  $(BINPATH)
 
 $(OBJDIR)/ :
 	mkdir -p $(OBJDIR)/

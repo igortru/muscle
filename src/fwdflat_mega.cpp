@@ -1,8 +1,7 @@
 #include "muscle.h"
 #include "mega.h"
-#include "hmmscores.h"
-#define MatchScore *ERROR*
-#define InsScore *ERROR*
+//#define MatchScore *ERROR*
+//#define InsScore *ERROR*
 
 /***
 Fwd[s][i][j] = 
@@ -15,6 +14,7 @@ Fwd[s][i][j] =
 void CalcFwdFlat_mega(const Mega &M,
   uint ProfileIdxX, uint ProfileIdxY, float *Flat)
 	{
+#include "hmmscores.h"
 	asserta(ProfileIdxX < SIZE(M.m_Profiles));
 	asserta(ProfileIdxY < SIZE(M.m_Profiles));
 	const vector<vector<byte> > &ProfileX = M.m_Profiles[ProfileIdxX];
@@ -122,7 +122,6 @@ void CalcFwdFlat_mega(const Mega &M,
 			//float Emit_Pair = MatchScore[x][y];
 			float Emit_y = M.GetInsScore(ProfileY, j-1);
 			float Emit_Pair = M.GetMatchScore(ProfileX, i-1, ProfileY, j-1);
-                cout << Emit_y << "\t" << Emit_Pair << endl;
 			if (i == 1 && j == 1)
 				Flat[Base_1_1 + HMMSTATE_M] = tSM + Emit_x0_y0;
 			else
