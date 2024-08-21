@@ -17,7 +17,6 @@ jobs:
       # Install ccache using port (optional, adjust as needed)
       - name: Install ccache
         run: |
-          sudo port install ccache
           sudo port install python311
           sudo port install wget
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  
