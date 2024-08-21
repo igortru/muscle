@@ -29,8 +29,8 @@ jobs:
           cd $GITHUB_WORKSPACE
           ls -lh
           cd src
-          chmod u+x ./build_linux.bash
-          chmod u+x ./build_linux.py
+          chmod u+x ./build_osx.bash
+          chmod u+x ./build_osx.py
           ./build_linux.bash
           pwd
       - name: Upload binary artifact
