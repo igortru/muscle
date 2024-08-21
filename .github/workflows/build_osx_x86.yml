@@ -19,6 +19,8 @@ jobs:
         run: |
           sudo port install ccache
           sudo port install python311
+          sudo port install wget
+          sudo port install gcc11
 
       # Runs a set of commands using the runner's shell
       - name: Build-commands
@@ -29,9 +31,9 @@ jobs:
           cd $GITHUB_WORKSPACE
           ls -lh
           cd src
-          chmod u+x ./build_linux.bash
-          chmod u+x ./build_linux.py
-          ./build_linux.bash
+          chmod u+x ./build_osx.bash
+          #chmod u+x ./build_linux.py
+          ./build_osx.bash
           pwd
       - name: Upload binary artifact
         uses: actions/upload-artifact@v4
