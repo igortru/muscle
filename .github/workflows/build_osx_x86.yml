@@ -5,7 +5,7 @@ on:
   
 jobs:
   build:
-    runs-on: macos-13
+    runs-on: macos-12
  
     steps:
       # Checks-out the repository under $GITHUB_WORKSPACE
@@ -17,10 +17,11 @@ jobs:
       # Install ccache using port (optional, adjust as needed)
       - name: Install ccache
         run: |
-          sudo port install ccache
           sudo port install python311
-          sudo port install gcc11 
           sudo port install wget
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  
+          brew update
+          brew install gcc@11
 
       # Runs a set of commands using the runner's shell
       - name: Build-commands
@@ -32,6 +33,7 @@ jobs:
           ls -lh
           cd src
           chmod u+x ./build_osx.bash
+          #chmod u+x ./build_linux.py
           ./build_osx.bash
           pwd
       - name: Upload binary artifact
