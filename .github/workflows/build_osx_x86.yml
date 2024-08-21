@@ -20,7 +20,8 @@ jobs:
           sudo port install ccache
           sudo port install python311
           sudo port install wget
-          sudo port install g++-11
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  
+          brew install g++-11
 
       # Runs a set of commands using the runner's shell
       - name: Build-commands
