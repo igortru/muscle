@@ -19,6 +19,7 @@ jobs:
         run: |
           sudo port install ccache
           sudo port install python311
+          sudo port install gcc11 
 
       # Runs a set of commands using the runner's shell
       - name: Build-commands
