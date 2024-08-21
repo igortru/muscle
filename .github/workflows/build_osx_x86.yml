@@ -20,7 +20,7 @@ jobs:
           sudo port install ccache
           sudo port install python311
           sudo port install wget
-          sudo port install gcc11
+          sudo apt install g++-11
 
       # Runs a set of commands using the runner's shell
       - name: Build-commands
