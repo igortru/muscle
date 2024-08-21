@@ -33,7 +33,7 @@ jobs:
           ls -lh
           cd src
           chmod u+x ./build_osx.bash
-          #chmod u+x ./build_linux.py
+          chmod u+x ./vcxproj_make.py
           ./build_osx.bash
           pwd
       - name: Upload binary artifact
