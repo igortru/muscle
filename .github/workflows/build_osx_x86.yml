@@ -22,7 +22,7 @@ jobs:
           sudo port install wget
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  
           brew update
-          brew install g++-11
+          brew install gcc@11
 
       # Runs a set of commands using the runner's shell
       - name: Build-commands
