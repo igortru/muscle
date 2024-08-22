@@ -1,4 +1,4 @@
-name: build-osx-x86
+name: build-osx-M
 
 on:
   workflow_dispatch:
@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: muscle-osx-binary
-          path: /Users/runner/work/muscle/muscle/src/muscle
+          path: /Users/runner/work/muscle/muscle/bin/muscle
       - name: Upload make.stderr artifact
         uses: actions/upload-artifact@v4
         with:
@@ -49,5 +49,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: make.stdout-osx
-          path: /Users/runner/work/muscle/muscle/bin/make.stdout
+          path: /Users/runner/work/muscle/muscle/src/make.stdout
 
