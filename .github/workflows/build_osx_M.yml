@@ -38,16 +38,16 @@ jobs:
       - name: Upload binary artifact
         uses: actions/upload-artifact@v4
         with:
-          name: muscle-osx-binary
+          name: muscle-osx-binary-m
           path: /Users/runner/work/muscle/muscle/bin/muscle
       - name: Upload make.stderr artifact
         uses: actions/upload-artifact@v4
         with:
-          name: make.stderr-osx
+          name: make.stderr-osx-m
           path: /Users/runner/work/muscle/muscle/src/make.stderr
       - name: Upload make.stdout artifact
         uses: actions/upload-artifact@v4
         with:
-          name: make.stdout-osx
+          name: make.stdout-osx-m
           path: /Users/runner/work/muscle/muscle/src/make.stdout
 
