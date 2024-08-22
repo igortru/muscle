@@ -39,12 +39,12 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: muscle-osx-binary
-          path: /Users/runner/work/muscle/muscle/bin/muscle
+          path: /Users/runner/work/muscle/muscle/src/muscle
       - name: Upload make.stderr artifact
         uses: actions/upload-artifact@v4
         with:
           name: make.stderr-osx
-          path: /Users/runner/work/muscle/muscle/bin/make.stderr
+          path: /Users/runner/work/muscle/muscle/src/make.stderr
       - name: Upload make.stdout artifact
         uses: actions/upload-artifact@v4
         with:
